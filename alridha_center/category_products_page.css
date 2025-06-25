@@ -1,0 +1,144 @@
+/* ------ أنماط قائمة المنتجات في الأقسام (category-products.html) - عمود واحد يملأ العرض ------ */
+@media (max-width: 768px) {
+    #products-list {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 0 10px;
+        margin-top: 20px;
+    }
+
+    #products-list .product {
+        flex-direction: column; /* لترتيب الصورة والنص في سطر، والأزرار في سطر آخر */
+        align-items: center; /* لمحاذاة كل المحتوى لليسار */
+        text-align: left; /* محاذاة النص لليسار */
+        padding: 15px;
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        margin-bottom: 0;
+        width: auto;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    #products-list .product:last-child {
+        border-bottom: 1px solid var(--border-color);
+    }
+    #products-list .product:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+    }
+
+    #products-list .product-link {
+        flex-direction: row-reverse; /* الصورة على اليمين والنص على اليسار في الجوال */
+        width: 100%;
+        margin-bottom: 10px; /* مسافة بين معلومات المنتج والأزرار */
+        justify-content: space-between; /* لدفع الصورة لليمين والنص لليسار على الجوال */
+        direction: rtl; /* اتجاه النص من اليمين لليسار */
+    }
+
+    #products-list .product-info {
+        display: flex;
+        align-items: center;
+        flex-direction: row-reverse; /* الصورة على اليمين والنص على اليسار داخل product-info على الجوال */
+        width: 100%; /* لضمان أنها تأخذ العرض الكامل */
+        justify-content: flex-end; /* لمحاذاة لليمين */
+    }
+
+    /* التعديل في الميديا كويري لضمان السعر تحت الاسم على الجوال */
+    #products-list .product-info .product-text-content {
+        display: flex;
+        flex-direction: column; /* **مهم: الاسم والسعر عمودياً مرة أخرى** */
+        align-items: flex-start; /* محاذاة النص لليسار */
+        margin-right: 15px; /* مسافة بين الصورة (التي على اليمين) وهذا النص على الجوال */
+        margin-left: 0;
+        text-align: left; /* محاذاة النص لليسار */
+    }
+    
+    #products-list .product-info strong {
+        font-size: 0.9em;
+        margin-left: 0; /* لا يوجد مسافة جانبية لـ strong */
+        margin-bottom: 5px; /* **التغيير هنا: مسافة سفلية لـ strong** */
+        white-space: normal;
+        text-align: left; /* محاذاة النص لليسار */
+    }
+    #products-list .product-info .product-price-inline {
+        font-size: 0.8em;
+        margin-bottom: 0; /* لا يوجد مسافة سفلية لـ price-inline */
+        margin-top: 0; /* لا يوجد مسافة علوية لـ price-inline */
+        text-align: left; /* محاذاة النص لليسار */
+        margin-left: 0; /* إزالة الهامش الجانبي */
+    }
+    #products-list .product-thumb {
+        width: 60px; /* حجم أصغر للصورة على الجوال */
+        height: 60px;
+        border-radius: 8px;
+        object-fit: cover;
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+
+    #products-list .product-actions {
+        flex-direction: row;
+        gap: 8px;
+        width: 100%; /* تأكد أن الأزرار تأخذ عرضًا كاملاً */
+        justify-content: center;
+        margin-top: 0;
+        padding-top: 0;
+    }
+
+    #products-list .add-btn,
+    #products-list .add-to-wishlist-btn,
+    #products-list .view-details-btn { /* تم إضافة .view-details-btn هنا */
+        padding: 8px 12px;
+        font-size: 0.85em;
+        width: auto;
+        flex-grow: 1; /* يجعلها تمتد لتأخذ المساحة المتاحة */
+        max-width: unset;
+        height: 40px;
+        gap: 8px;
+        white-space: nowrap; /* لمنع التفاف النص داخل الزر */
+    }
+    #products-list .add-to-wishlist-btn {
+        width: 40px;
+        flex-grow: 0; /* لا يمتد ليبقى مربعاً */
+        border-radius: 50%;
+    }
+    /* تنسيق خاص لزر اختر النوع في هذا القسم ليتطابق مع Add to cart */
+    #products-list .view-details-btn {
+        background-color: var(--alridha-main-orange-red); /* استخدم لونًا يميزه إن أردت */
+        color: white;
+    }
+    #products-list .view-details-btn:hover {
+        background-color: var(--danger-hover); /* لون عند التحويم */
+    }
+}
+
+/* ************** أنماط خاصة جداً للشاشات الصغيرة جداً (أقل من 480 بكسل) ************** */
+@media (max-width: 480px) {
+    #products-list {
+        grid-template-columns: 1fr;
+        padding: 0 10px;
+    }
+    #products-list .product {
+        max-width: none;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    /* تأكد من تنسيق أزرار .product-actions هنا أيضاً إذا لزم الأمر */
+    #products-list .product-actions .add-btn,
+    #products-list .product-actions .view-details-btn,
+    #products-list .product-actions .add-to-wishlist-btn {
+        height: 35px; /* تصغير الارتفاع أكثر */
+        font-size: 0.75em; /* تصغير الخط أكثر */
+        padding: 6px 10px;
+        gap: 5px;
+    }
+    #products-list .product-actions .add-to-wishlist-btn {
+        width: 35px; /* تصغير زر القلب */
+        height: 35px;
+        font-size: 0.9em;
+    }
+}

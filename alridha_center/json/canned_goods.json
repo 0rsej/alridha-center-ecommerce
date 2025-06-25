@@ -1,0 +1,4 @@
+[
+    { "id": 1, "globalId": "canned_goods_1", "name": "فول معلب", "price": 5000, "desc": "فول مدمس جاهز للأكل.", "image": "قسم البهارات/فول-معلب.jpeg", "category": "canned_goods" },
+    { "id": 2, "globalId": "canned_goods_2", "name": "مخلل خيار", "price": 7000, "desc": "مخلل خيار عالي الجودة.", "image": "قسم البهارات/مخلل-خيار.jpeg", "category": "canned_goods" }
+]

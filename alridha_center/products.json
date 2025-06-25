@@ -1,0 +1,125 @@
+[
+    { "id": 1, "name": "كزبر", "price": 10000, "desc": "بهار الكزبر الطازج", "image": "قسم البهارات/كزبرة.avif", "category": "spices" },
+    { "id": 2, "name": "ورق غار", "price": 10000, "desc": "ورق غار طبيعي وعطري", "image": "قسم البهارات/ورق-غار.png", "category": "spices" },
+    { "id": 3, "name": "بهارات تكة دجاج", "price": 20000, "desc": "أجود بهارات التكة لطبق شهي", "image": "قسم البهارات/بهارات-تكة-دجاج.jpeg", "category": "spices" },
+    { "id": 4, "name": "زعتر", "price": 12000, "desc": "زعتر بلدي عالي الجودة", "image": "قسم البهارات/زعتر.jpeg", "category": "spices" },
+    { "id": 5, "name": "هيل", "price": 50000, "desc": "هيل فاخر", "image": "قسم البهارات/هيل.webp", "category": "spices",
+      "variants": [
+        { "type": "شكل", "value": "صحيح", "image": "قسم البهارات/هيل.webp", "price_modifier": 0 },
+        { "type": "شكل", "value": "مطحون", "image": "قسم البهارات/هيل-مطحون.jpg", "price_modifier": 0 }
+      ]
+    },
+    { "id": 6, "name": "صبغ لوزينة", "price": 15000, "desc": "صبغ لوزينة للمأكولات", "image": "قسم البهارات/صبغ-لوزينة.jpeg", "category": "spices",
+      "variants": [
+        { "type": "لون", "value": "أحمر", "image": "قسم البهارات/صبغ-لوزينة-احمر.jpeg" },
+        { "type": "لون", "value": "أصفر", "image": "قسم البهارات/صبغ-لوزينة-اصفر.jpeg" },
+        { "type": "لون", "value": "أخضر", "image": "قسم البهارات/صبغ-لوزينة-اخضر.jpeg" }
+      ]
+    },
+    { "id": 7, "name": "شنان", "price": 15000, "desc": "شنان طازج ومجفف", "image": "قسم البهارات/شنان.jpeg", "category": "spices" },
+    { "id": 8, "name": "دارسين", "price": 10000, "desc": "دارسين طبيعي عالي الجودة", "image": "قسم البهارات/دارسين-عادي.jpeg", "category": "spices",
+      "variants": [
+        { "type": "نوع", "value": "عادي", "image": "قسم البهارات/دارسين-عادي.jpeg", "price_modifier": 0 },
+        { "type": "نوع", "value": "أصلي", "image": "قسم البهارات/دارسين-اصلي.jpeg", "price_modifier": 5000 },
+        { "type": "نوع", "value": "مطحون", "image": "قسم البهارات/دارسين-مطحون.jpeg", "price_modifier": 0 }
+      ]
+    },
+    { "id": 9, "name": "كبابة", "price": 5000, "desc": "حبوب كبابة ممتازة", "image": "قسم البهارات/كبابة.webp", "category": "spices" },
+    { "id": 10, "name": "بصل مطحون", "price": 8000, "desc": "بصل مجفف ومطحون", "image": "قسم البهارات/بصل-مطحون.webp", "category": "spices" },
+    { "id": 11, "name": "ثوم مطحون", "price": 8000, "desc": "ثوم مجفف ومطحون", "image": "قسم البهارات/ثوم-مطحون.webp", "category": "spices" },
+    { "id": 12, "name": "قرنفل", "price": 15000, "desc": "قرنفل ذو رائحة قوية", "image": "قسم البهارات/قرنفل.webp", "category": "spices" },
+    { "id": 13, "name": "عرك حار", "price": 7000, "desc": "عرك حار مجفف", "image": "قسم البهارات/عرك-حار.jpg", "category": "spices",
+      "variants": [
+        { "type": "شكل", "value": "صحيح", "image": "قسم البهارات/عرك-حار.jpg", "price_modifier": 0 },
+        { "type": "شكل", "value": "مطحون", "image": "قسم البهارات/عرك-حار-مطحون.jpg", "price_modifier": 0 }
+      ]
+    },
+    { "id": 14, "name": "بهارات عمبة", "price": 12000, "desc": "بهارات العمبة الأصلية", "image": "قسم البهارات/بهارات-عمبة.jpeg", "category": "spices" },
+    { "id": 15, "name": "سبع بهارات", "price": 20000, "desc": "خلطة السبع بهارات الفاخرة", "image": "قسم البهارات/سبع-بهارات.jpeg", "category": "spices" },
+    { "id": 16, "name": "بهارات مندي", "price": 18000, "desc": "بهارات المندي لطبق شهي", "image": "قسم البهارات/بهارات-مندي.jpeg", "category": "spices" },
+    { "id": 17, "name": "كجرات", "price": 15000, "desc": "كجرات طبيعي", "image": "قسم البهارات/كجرات.jpeg", "category": "spices" },
+    { "id": 18, "name": "حبة سودة", "price": 8000, "desc": "حبة سودة (حبة البركة) نقية", "image": "قسم البهارات/حبة-سودة.jpeg", "category": "spices" },
+    { "id": 19, "name": "ثوم جبل", "price": 10000, "desc": "ثوم جبل مجفف", "image": "قسم البهارات/ثوم-جبل.jpeg", "category": "spices" },
+    { "id": 20, "name": "بخور جوري", "price": 20000, "desc": "بخور الجوري الفواح", "image": "قسم البهارات/بخور-جوري.jpeg", "category": "spices" },
+    { "id": 21, "name": "حب رمان", "price": 10000, "desc": "حب رمان مجفف", "image": "قسم البهارات/حب-رمان-مجفف.webp", "category": "spices" },
+    { "id": 22, "name": "حلبة", "price": 7000, "desc": "بذور الحلبة الطبيعية", "image": "قسم البهارات/حلبة.jpeg", "category": "spices" },
+    { "id": 23, "name": "بابريكة", "price": 10000, "desc": "بابريكة حلوة", "image": "قسم البهارات/بابريكة.jpeg", "category": "spices" },
+    { "id": 24, "name": "بهارات فنكر", "price": 12000, "desc": "بهارات بطاطا فنكر", "image": "قسم البهارات/بهارات-فنكر.jpeg", "category": "spices" },
+    { "id": 25, "name": "ورد محمدي", "price": 15000, "desc": "ورد محمدي مجفف", "image": "قسم البهارات/ورد-محمدي.jpg", "category": "spices" },
+    { "id": 26, "name": "يانسون", "price": 8000, "desc": "يانسون طبيعي", "image": "قسم البهارات/يانسون.jpeg", "category": "spices",
+      "variants": [
+        { "type": "شكل", "value": "صحيح", "image": "قسم البهارات/يانسون.jpeg", "price_modifier": 0 },
+        { "type": "شكل", "value": "نجم", "image": "قسم البهارات/يانسون-نجم.jpeg", "price_modifier": 2000 }
+      ]
+    },
+    { "id": 27, "name": "فلفل حار", "price": 12000, "desc": "فلفل حار مجفف", "image": "قسم البهارات/فلفل-احمر-مجفف.jpeg", "category": "spices" },
+    { "id": 28, "name": "شب", "price": 7000, "desc": "شب أبيض نقي", "image": "قسم البهارات/شب-مطحون.webp", "category": "spices" },
+    { "id": 29, "name": "بهارات برياني", "price": 18000, "desc": "بهارات برياني هندية أصلية", "image": "قسم البهارات/بهارات-برياني.jpeg", "category": "spices" },
+    { "id": 30, "name": "بهارات مرك اصلي", "price": 15000, "desc": "بهارات مرك أصلية", "image": "قسم البهارات/بهارات-مرق-اصلي.jpeg", "category": "spices" },
+    { "id": 31, "name": "فلفل اسود", "price": 10000, "desc": "فلفل أسود فاخر", "image": "قسم البهارات/فلفل-اسود.jpg", "category": "spices",
+      "variants": [
+        { "type": "شكل", "value": "صحيح", "image": "قسم البهارات/فلفل-اسود.jpg", "price_modifier": 0 },
+        { "type": "شكل", "value": "مطحون", "image": "قسم البهارات/فلفل-اسود-مطحون.jpeg", "price_modifier": 0 }
+      ]
+    },
+    { "id": 32, "name": "حبة حلوة", "price": 7000, "desc": "حبة حلوة", "image": "قسم البهارات/حبة-حلوة.jpeg", "category": "spices" },
+    { "id": 33, "name": "سماك", "price": 8000, "desc": "سماك بلدي", "image": "قسم البهارات/سماك.jpeg", "category": "spices" },
+    { "id": 34, "name": "ثعلبية", "price": 10000, "desc": "ثعلبية مطحونة", "image": "قسم البهارات/ثعلبية.jpg", "category": "spices" },
+    { "id": 35, "name": "جوزة الطيبة", "price": 15000, "desc": "جوزة الطيب", "image": "قسم البهارات/جوزة-الطيبة.webp", "category": "spices" },
+    { "id": 36, "name": "اكليل الجبل", "price": 12000, "desc": "إكليل الجبل مجفف", "image": "قسم البهارات/اكليل-الجبل.jpg", "category": "spices" },
+    { "id": 37, "name": "لبان الذكر", "price": 10000, "desc": "لبان الذكر الأصلي", "image": "قسم البهارات/لبان-الذكر.jpeg", "category": "spices" },
+    { "id": 38, "name": "صودا", "price": 7000, "desc": "صودا الخبز", "image": "قسم البهارات/صودا.jpeg", "category": "spices" },
+    { "id": 39, "name": "بهارات طرشي", "price": 12000, "desc": "بهارات الطرشي الشهية", "image": "قسم البهارات/بهارات-طرشي.jpeg", "category": "spices" },
+    { "id": 40, "name": "علك مر", "price": 15000, "desc": "علك المر الطبيعي", "image": "قسم البهارات/علك-مر.jpeg", "category": "spices" },
+    { "id": 41, "name": "لمندوزي", "price": 12000, "desc": "لمندوزي (ملح الليمون)", "image": "قسم البهارات/لمندوزي.jpeg", "category": "spices" },
+    { "id": 42, "name": "جوز مبروش", "price": 15000, "desc": "جوز هند مبروش", "image": "قسم البهارات/جوز-مبروش.jpeg", "category": "spices" },
+    { "id": 43, "name": "كمون", "price": 10000, "desc": "كمون حب", "image": "قسم البهارات/كمون.jpg", "category": "spices" },
+    { "id": 44, "name": "حرمل", "price": 10000, "desc": "حبوب الحرمل", "image": "قسم البهارات/حرمل.jpeg", "category": "spices" },
+    { "id": 45, "name": "سمسم", "price": 10000, "desc": "سمسم محمص", "image": "قسم البهارات/سمسم.jpeg", "category": "spices" },
+    { "id": 46, "name": "ككو مطحون", "price": 10000, "desc": "كاكاو مطحون نقي", "image": "قسم البهارات/ككو-مطحون.jpeg", "category": "spices" },
+    { "id": 47, "name": "حلويات شرقية مشكلة", "price": 15000, "desc": "تشكيلة فاخرة لأوقاتكم السعيدة.", "image": "قسم البهارات/حلويات-شرقية-مشكلة.jpeg", "category": "sweets" },
+    { "id": 48, "name": "منظف أسطح قوي", "price": 8000, "desc": "لمنزل نظيف ولامع.", "image": "قسم البهارات/منظف-أسطح-قوي.jpeg", "category": "cleaning_supplies" },
+    { "id": 49, "name": "طقم سكاكين احترافي", "price": 30000, "desc": "جودة عالية لتقطيع سلس.", "image": "قسم البهارات/طقم-سكاكين-احترافي.jpeg", "category": "home_tools" },
+    { "id": 50, "name": "فول معلب", "price": 5000, "desc": "فول مدمس جاهز للأكل.", "image": "قسم البهارات/فول-معلب.jpeg", "category": "canned_goods" },
+    { "id": 51, "name": "مخلل خيار", "price": 7000, "desc": "مخلل خيار عالي الجودة.", "image": "قسم البهارات/مخلل-خيار.jpeg", "category": "canned_goods" },
+    { "id": 52, "name": "صابون سائل لليدين", "price": 6000, "desc": "صابون معطر للحفاظ على نظافة اليدين.", "image": "قسم البهارات/صابون-سائل-لليدين.jpeg", "category": "personal_care" },
+    { "id": 53, "name": "كيكة فانيلا", "price": 25000, "desc": "كيكة فانيلا اسفنجية للمناسبات.", "image": "قسم البهارات/كيكة-فانيلا.jpeg", "category": "occasions_cakes" },
+    { "id": 54, "name": "طحين", "price": 3000, "desc": "طحين أبيض فاخر لجميع الاستخدامات.", "image": "قسم البهارات/طحين.jpeg", "category": "cake_ingredients" },
+    { "id": 55, "name": "أرز بسمتي", "price": 12000, "desc": "أرز بسمتي هندي فاخر.", "image": "قسم البهارات/أرز-بسمتي.jpeg", "category": "groceries" },
+    { "id": 56, "name": "عقد ذهب", "price": 150000, "desc": "عقد ذهب أنيق وجميل.", "image": "قسم البهارات/عقد-ذهب.jpeg", "category": "accessories" },
+    { "id": 57, "name": "اسمنت", "price": 10000, "desc": "اسمنت عالي الجودة للبناء.", "image": "قسم البهارات/اسمنت.jpeg", "category": "construction_materials" },
+    { "id": 58, "name": "مفتاح ربط", "price": 8000, "desc": "مفتاح ربط متعدد الاستخدامات.", "image": "قسم البهارات/مفتاح-ربط.jpeg", "category": "home_tools" },
+    { "id": 59, "name": "لعبة سيارة", "price": 15000, "desc": "لعبة سيارة صغيرة للأطفال.", "image": "قسم البهارات/لعبة-سيارة.jpeg", "category": "toys_kids" },
+    { "id": 60, "name": "رصيد آسياسيل", "price": 10000, "desc": "بطاقة تعبئة رصيد آسياسيل.", "image": "قسم البهارات/رصيد-آسياسيل.jpeg", "category": "balance_services" },
+    { "id": 61, "name": "دفتر ملاحظات", "price": 2000, "desc": "دفتر ملاحظات كبير.", "image": "قسم البهارات/دفتر-ملاحظات.jpeg", "category": "school_supplies" },
+    { "id": 62, "name": "عطر رجالي", "price": 40000, "desc": "عطر رجالي فواح وجذاب.", "image": "قسم البهارات/عطر-رجالي.jpeg", "category": "body_care_perfumes" },
+    { "id": 63, "name": "منظف أرضيات", "price": 7000, "desc": "منظف فعال لجميع أنواع الأرضيات.", "image": "قسم البهارات/منظف-أرضيات.jpeg", "category": "cleaning_supplies" },
+    { "id": 64, "name": "لوز", "price": 20000, "desc": "لوز طبيعي محمص.", "image": "قسم البهارات/لوز.jpeg", "category": "nuts" },
+    { "id": 65, "name": "حب مشكل اصلي", "price": 16000, "desc": "حب مشكل فاخر وعالي الجودة.", "image": "قسم البهارات/حب-مشكل-اصلي.jpeg", "category": "nuts" },
+    { "id": 66, "name": "حب مشكل عادي", "price": 8000, "desc": "حب مشكل عادي.", "image": "قسم البهارات/حب-مشكل-عادي.jpeg", "category": "nuts" },
+    { "id": 67, "name": "فستق حلبي", "price": 20000, "desc": "فستق حلبي عالي الجودة.", "image": "قسم البهارات/فستق-حلبي.jpeg", "category": "nuts" },
+    { "id": 68, "name": "لوز", "price": 14000, "desc": "لوز فاخر.", "image": "قسم البهارات/لوز-فاخر.jpeg", "category": "nuts" },
+    { "id": 69, "name": "كاجو", "price": 16000, "desc": "كاجو محمص.", "image": "قسم البهارات/كاجو.jpeg", "category": "nuts" },
+    { "id": 70, "name": "دك السبال", "price": 6000, "desc": "دك السبال فاخر.", "image": "قسم البهارات/دك-السبال.jpeg", "category": "nuts" },
+    { "id": 71, "name": "جوز عين الجمل", "price": 6000, "desc": "جوز عين الجمل كامل أو مفلس.", "image": "قسم البهارات/جوز-عين-الجمل.jpeg", "category": "nuts",
+      "variants": [
+        { "type": "شكل", "value": "صحيح", "image": "قسم البهارات/جوز-عين-الجمل.jpeg", "price_modifier": 0 },
+        { "type": "شكل", "value": "مفلس", "image": "قسم البهارات/جوز-عين-الجمل-مفلس.jpeg", "price_modifier": 6000 }
+      ]
+    },
+    { "id": 72, "name": "زبيب", "price": 8000, "desc": "زبيب حلو وطازج.", "image": "قسم البهارات/زبيب.jpeg", "category": "nuts" },
+    { "id": 73, "name": "حمص", "price": 6000, "desc": "حمص محمص ومقرمش.", "image": "قسم البهارات/حمص.jpeg", "category": "nuts" },
+    { "id": 74, "name": "ذرة", "price": 6000, "desc": "ذرة محمصة.", "image": "قسم البهارات/ذرة.jpeg", "category": "nuts" },
+    { "id": 75, "name": "حب اصفر", "price": 8000, "desc": "حب اصفر للتحميص.", "image": "قسم البهارات/حب-اصفر.jpeg", "category": "nuts" },
+    { "id": 76, "name": "حب ابيض", "price": 10000, "desc": "حب ابيض للتحميص.", "image": "قسم البهارات/حب-ابيض.jpeg", "category": "nuts" },
+    { "id": 77, "name": "فستق سوداني", "price": 6000, "desc": "فستق سوداني محمص.", "image": "قسم البهارات/فستق-سوداني.jpeg", "category": "nuts" },
+    { "id": 78, "name": "جكليت كويتي", "price": 6000, "desc": "شوكولاتة كويتية فاخرة.", "image": "قسم البهارات/جكليت-كويتي.jpeg", "category": "sweets" },
+    { "id": 79, "name": "جكليت قمر دين", "price": 4000, "desc": "شوكولاتة قمر دين مميزة.", "image": "قسم البهارات/جكليت-قمر-دين.jpeg", "category": "sweets" },
+    { "id": 80, "name": "جكليت مشكل", "price": 4000, "desc": "تشكيلة جكليت متنوعة.", "image": "قسم البهارات/جكليت-مشكل.jpeg", "category": "sweets" },
+    { "id": 81, "name": "حب", "price": 5000, "desc": "حب للتحميص بأنواع مختلفة.", "image": "قسم البهارات/حب-عادي.jpeg", "category": "nuts",
+      "variants": [
+        { "type": "نوع", "value": "عادي", "image": "قسم البهارات/حب-عادي.jpeg", "price_modifier": 0 },
+        { "type": "نوع", "value": "امريكي", "image": "قسم البهارات/حب-امريكي.jpeg", "price_modifier": 3000 }
+      ]
+    }
+]

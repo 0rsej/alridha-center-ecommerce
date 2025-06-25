@@ -1,0 +1,4 @@
+[
+    { "id": 1, "globalId": "cleaning_supplies_1", "name": "منظف أسطح قوي", "price": 8000, "desc": "لمنزل نظيف ولامع.", "image": "قسم البهارات/منظف-أسطح-قوي.jpeg", "category": "cleaning_supplies" },
+    { "id": 2, "globalId": "cleaning_supplies_2", "name": "منظف أرضيات", "price": 7000, "desc": "منظف فعال لجميع أنواع الأرضيات.", "image": "قسم البهارات/منظف-أرضيات.jpeg", "category": "cleaning_supplies" }
+]

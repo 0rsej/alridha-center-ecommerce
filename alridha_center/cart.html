@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>سلة مشترياتك - سنتر الرضا</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="stylesheet" href="main.css" />
+</head>
+<body>
+
+<div id="notification" class="notification"></div>
+
+<nav class="navbar" id="mainNavbar">
+    <a href="index.html" class="brand-logo-container">
+        <img src="logo.png" alt="شعار سنتر الرضا"> <span>سنتر الرضا</span>
+    </a>
+
+    <div class="nav-links" id="navLinks">
+        <a href="index.html"><i class="fas fa-home"></i> الرئيسية</a>
+        <a href="categories.html"><i class="fas fa-th-large"></i> الأقسام</a>
+        <a href="index.html#featured-products-section"><i class="fas fa-star"></i> منتجات مميزة</a> <a href="index.html#contact-section"><i class="fas fa-headset"></i> تواصل معنا</a> <a href="orders.html"><i class="fas fa-receipt"></i> طلباتي</a>
+        <a href="cart.html"><i class="fas fa-shopping-cart"></i> سلة المشتريات <span class="cart-count" id="navCartCount">0</span></a>
+        <a href="wishlist.html"><i class="fas fa-heart"></i> المفضلة <span class="wishlist-count" id="navWishlistCount">0</span></a>
+    </div>
+
+    <div class="menu-toggle" id="menuToggle">
+        <i class="fas fa-bars"></i>
+    </div>
+</nav>
+
+<div class="container">
+    <h1 class="page-title">سلة مشترياتك</h1>
+
+    <div class="cart card">
+        <h2>تفاصيل الطلبات</h2>
+        <table id="cart-table">
+            <thead>
+                <tr>
+                    <th>المنتج</th>
+                    <th>الكمية</th>
+                    <th>السعر</th>
+                    <th>الإجمالي</th>
+                    <th>حذف</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <div class="cart-actions">
+            <div>
+                <button id="checkout-btn" class="action-btn">التالي</button>
+                <button id="clear-cart-btn" class="action-btn clear-cart-btn">تفريغ السلة</button>
+            </div>
+            <strong>المجموع: <span id="cart-total">0</span> ألف دينار</strong>
+        </div>
+    </div>
+
+    <div class="checkout card hidden">
+        <h2>تأكيد الطلب</h2>
+        <div class="form-group">
+            <label for="phone">رقم الهاتف (مطلوب):</label>
+            <div class="input-icon-wrapper">
+                <i class="fas fa-phone icon-left"></i>
+                <input type="tel" id="phone" placeholder="أدخل رقم هاتفك" required aria-required="true" pattern="[0-9]{10,}" title="يجب أن يتكون رقم الهاتف من 10 أرقام على الأقل" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="location">الموقع/العنوان (مطلوب):</label>
+            <div class="input-icon-wrapper">
+                <i class="fas fa-map-marker-alt icon-left"></i> <input type="text" id="location" placeholder="مثال: البصرة - حي المعلمين - شارع 5 - منزل 23" required aria-required="true">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="notes">ملاحظات إضافية (اختياري):</label>
+            <textarea id="notes" placeholder="اكتب أي ملاحظات هنا (مثل تفاصيل العنوان أو وقت التوصيل المفضل)"></textarea>
+        </div>
+        <button id="confirm-btn">تأكيد الطلب وإرسال</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+
+<footer class="footer">
+    <p>&copy; 2025 سنتر الرضا. جميع الحقوق محفوظة.</p>
+</footer>
+
+</body>
+</html>

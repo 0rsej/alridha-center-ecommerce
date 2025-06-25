@@ -1,0 +1,521 @@
+/* الأنماط الخاصة بصفحات المنتجات (مثل category-products.html) */
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 20px;
+    margin-top: 160px;
+}
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: var(--card-shadow); /* استخدام الظل كمتغير */
+    margin-bottom: 35px;
+}
+/* أنماط المنتج في القوائم (مثل صفحة الأقسام) */
+.product {
+    display: flex;
+    flex-direction: column; /* لترتيب الصورة والنص في سطر، والأزرار في سطر آخر */
+    align-items: flex-start; /* لمحاذاة كل المحتوى (صورة+نص، وأزرار) لليسار */
+    border-bottom: 1px solid var(--border-color);
+    padding: 10px 0;
+    width: 100%; /* لضمان أن كل عنصر منتج يأخذ العرض الكامل المتاح له */
+    box-sizing: border-box; /* لضمان احتساب الحشوة والحدود ضمن العرض */
+}
+.product:last-child {
+    border-bottom: none;
+}
+/* هذا النمط لـ product-link مخصص لقوائم المنتجات العمودية (مثل صفحة الأقسام) */
+.product-link {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse; /* النص على اليسار، والصورة على اليمين */
+    justify-content: space-between; /* لدفع الصورة لليمين والنص لليسار (الفصل التام) */
+    width: 100%;
+    margin-bottom: 10px; /* مسافة بين معلومات المنتج والأزرار */
+    direction: rtl; /* اتجاه النص من اليمين لليسار */
+}
+.product-info {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse; /* لجعل الصورة على اليمين والنص على اليسار داخل product-info */
+    width: 100%; /* لضمان أنها تأخذ العرض الكامل */
+    justify-content: flex-end; /* لمحاذاة محتواها لليمين */
+}
+.product-info .product-text-content {
+    display: flex;
+    flex-direction: column; /* **مهم: لجعل الاسم والسعر عمودياً** */
+    align-items: flex-start; /* محاذاة النص لليسار */
+    margin-right: 15px; /* مسافة بين الصورة (التي على اليمين) وهذا النص */
+    margin-left: 0;
+    text-align: left; /* جعل النص يبدأ من اليسار */
+    flex-grow: 1; /* لجعل كتلة النص تأخذ المساحة المتبقية لدفع الصورة لليمين */
+}
+.product-info strong {
+    font-size: 1.2em;
+    color: var(--dark-text);
+    display: block; /* **التغيير هنا: الاسم يأخذ سطر كامل** */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    text-align: left;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 3px; /* **التغيير هنا: مسافة بسيطة تحت اسم المنتج** */
+    white-space: normal; /* السماح بالالتفاف إذا كان طويلاً */
+}
+.product-info small {
+    display: none; /* إخفاء وصف المنتج */
+}
+.product-info .product-price-inline {
+    display: block; /* **التغيير هنا: السعر يأخذ سطر كامل تحت الاسم** */
+    font-size: 1em;
+    color: var(--alridha-secondary-red);
+    font-weight: 600;
+    margin-top: 0; /* **التغيير هنا: لا يوجد هامش علوي إضافي هنا، المسافة تأتي من strong** */
+    margin-left: 0;
+    text-align: left;
+    margin-right: 0;
+    white-space: normal; /* السماح بالالتفاف إذا كان طويلاً */
+}
+.product-thumb {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-left: 0;
+    margin-right: 0;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+}
+
+/* الأنماط الافتراضية للعرض (لشاشات الحاسوب - عرض شبكي) */
+.products-display-area {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-top: 35px;
+    padding: 0 20px;
+    justify-content: center;
+}
+
+/* أنماط بطاقات المنتجات في الشبكة (المنتجات المميزة، المنتجات ذات الصلة، المفضلة) */
+.product-item {
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: var(--card-shadow); /* استخدام الظل كمتغير */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column; /* جعل المحتوى عموديًا: صورة ثم نص ثم أزرار */
+    justify-content: space-between; /* لدفع الأزرار للأسفل */
+    align-items: center; /* توسيط العناصر داخل المربع (الصورة والنص والأزرار) */
+    border: 1px solid #ddd;
+    text-align: center; /* توسيط النصوص افتراضياً هنا */
+}
+
+.product-item:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: var(--hover-shadow); /* استخدام الظل الجديد للتحويم */
+}
+
+/* تعديل هذا النمط لضمان الترتيب الصحيح داخل البطاقة (الصورة ثم الاسم ثم السعر) */
+.product-item .product-link {
+    text-decoration: none;
+    color: inherit;
+    display: flex; /* لكي يعمل flex-direction: column */
+    flex-direction: column; /* **التغيير الحاسم: الصورة ثم النص تحتها** */
+    align-items: center; /* توسيط الصورة والـ text-info داخل الرابط */
+    width: 100%; /* تأكد من أن الرابط يأخذ عرض البطاقة */
+    margin-bottom: 15px; /* مسافة بين معلومات المنتج والأزرار */
+    direction: rtl; /* اتجاه نص RTL */
+}
+
+.product-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border-radius: 50%;
+    border: 3px solid var(--alridha-main-orange-red);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* جديد: تنسيق حاوية النص في منتجات قد تعجبك ايضا (وفي المنتجات المميزة) */
+.product-item .product-text-info {
+    display: flex;
+    flex-direction: column; /* **مهم: لضمان أن الاسم والسعر يظهران عمودياً** */
+    align-items: center; /* توسيط الاسم والسعر داخل هذه الحاوية */
+    text-align: center; /* توسيط النص */
+    width: 100%; /* لكي تأخذ المساحة الكاملة وتسمح بالتوسيط */
+    direction: rtl; /* اتجاه نص RTL */
+}
+
+.product-item h3 {
+    font-size: 1.3em;
+    color: var(--dark-text);
+    margin-bottom: 5px; /* **التغيير هنا: مسافة بسيطة تحت الاسم** */
+    font-weight: 700;
+    text-align: center; /* **التغيير هنا: توسيط الاسم** */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    direction: rtl;
+    display: block;
+}
+
+.product-item p {
+    font-size: 0.9em;
+    color: var(--light-text);
+    margin-bottom: 15px;
+    min-height: 40px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center; /* **التغيير هنا: توسيط الوصف** */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    direction: rtl;
+}
+
+.product-item .price {
+    font-size: 1.5em;
+    font-weight: 800;
+    color: var(--alridha-secondary-red);
+    margin-bottom: 20px;
+    text-align: center; /* **التغيير هنا: توسيط السعر** */
+    direction: rtl;
+    display: block; /* **التغيير هنا: السعر يأخذ سطر كامل** */
+    margin-left: 0; /* إزالة الهامش الجانبي */
+}
+
+.product-actions {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: auto;
+    padding-top: 10px;
+}
+
+/* أنماط خاصة لأزرار التصفية في قسم المنتجات المفضلة */
+.filter-button-group {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+
+.filter-button-group .button {
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1em;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* ظل افتراضي */
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.filter-button-group .button.favorite-all-btn {
+    background-color: var(--alridha-secondary-red);
+    color: white;
+}
+.filter-button-group .button.favorite-all-btn:hover {
+    background-color: var(--danger-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--hover-shadow); /* استخدام الظل الجديد للتحويم */
+}
+
+.filter-button-group .button.filter-by-category-btn {
+    background-color: var(--alridha-accent-green);
+    color: white;
+}
+.filter-button-group .button.filter-by-category-btn:hover {
+    background-color: var(--success-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--hover-shadow); /* استخدام الظل الجديد للتحويم */
+}
+
+/* نمط للأيقونات داخل الأزرار */
+.filter-button-group .button i {
+    margin-left: 5px;
+    order: 2;
+}
+
+/* تعديل عرض أزرار "إضافة للسلة" و "إزالة" في الصورة الثانية */
+.product-item .product-actions .add-to-cart-btn,
+.product-item .product-actions .remove-from-wishlist-btn {
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    flex-grow: 1;
+    max-width: unset;
+}
+
+/* الأزرار في صفحة المنتجات/المفضلة */
+.product-actions button {
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+/*
+    * جديد: أنماط زر "اختر النوع" في بطاقات المنتجات الشبكية (المنتجات المميزة، ذات الصلة)
+    * سيأخذ نفس تنسيق زر "أضف للسلة"
+*/
+.product-item .product-actions .view-details-btn {
+    background-color: var(--alridha-main-orange-red); /* توحيد اللون كما هو مطلوب */
+    color: white;
+    border: none;
+    border-radius: 50px; /* **تغيير هنا: لجعل الحواف دائرية** */
+    cursor: pointer;
+    font-weight: 600;
+    transition: transform 0.2s ease, box-shadow 0.3s ease; /* **تمت إزالة انتقال background-color** */
+    flex-grow: 1;
+    max-width: unset;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 15px; /* نفس حشوة زر السلة الافتراضي */
+    font-size: 0.9em; /* حجم خط افتراضي ليتناسب */
+}
+
+.product-item .product-actions .view-details-btn:hover {
+    /* background-color: var(--alridha-main-orange-red); **تمت إزالة هذا السطر ليبقى اللون نفسه** */
+    transform: translateY(-2px);
+    box-shadow: var(--hover-shadow);
+}
+
+
+/* ************** Media Query for mobile devices (max-width: 768px) - أنماط عامة للـ products-display-area ************** */
+@media (max-width: 768px) {
+    .products-display-area {
+        /* إعادة أنماط flexbox والكاروسيل الأفقي هنا كافتراضي */
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        scroll-snap-type: x mandatory !important;
+        -webkit-overflow-scrolling: touch !important;
+        gap: 15px !important; /* مسافة بين المنتجات */
+        padding: 10px 15px !important; /* حشوة داخلية */
+        justify-content: flex-start !important;
+        align-items: flex-start !important;
+        padding-bottom: 20px !important;
+    }
+
+    .product-item {
+        /* إعادة خصائص flex-shrink, width, scroll-snap-align التي كانت تخص الكاروسيل */
+        flex-shrink: 0 !important;
+        width: 180px !important;
+        padding: 10px !important;
+        scroll-snap-align: start !important;
+        text-align: center !important; /* توسيط كل المحتوى داخل البطاقة */
+        align-items: center !important; /* توسيط العناصر داخليًا (صورة، نص، أزرار) */
+        min-height: 250px !important; /* لتوفير مساحة كافية حتى لو كان النص قصيراً */
+        flex-direction: column !important; /* تأكيد الترتيب العمودي */
+        justify-content: space-between !important; /* لتحريك الأزرار للأسفل إذا كان هناك مساحة */
+    }
+    
+    /* هذا النمط لـ product-link سيتم تجاوزه في هذا السياق (product-item) */
+    .product-item .product-link {
+        flex-direction: column !important; /* **فرض الترتيب العمودي للصورة والاسم/السعر** */
+        align-items: center !important; /* توسيط الصورة والنص داخل الرابط */
+        width: 100% !important;
+        margin-bottom: 15px !important; /* مسافة بين معلومات المنتج والأزرار */
+    }
+
+    .product-item img {
+        width: 80px !important;
+        height: 80px !important;
+        margin-bottom: 8px !important;
+        border-radius: 50% !important;
+    }
+    
+    /* توسيط الاسم والسعر داخل البطاقة */
+    .product-item h3 {
+        font-size: 1.0em !important; /* **التعديل هنا: تصغير حجم اسم المنتج** */
+        text-align: center !important;
+        display: block !important;
+        margin-left: 0 !important; /* إزالة أي هامش جانبي قد يمنع التوسيط */
+        margin-right: 0 !important;
+        line-height: 1.3em !important; /* لضمان تناسق ارتفاع السطر */
+        min-height: 2.6em !important; /* لضمان مساحة لسطرين */
+        overflow: hidden !important; /* لإخفاء الفائض */
+        text-overflow: ellipsis !important; /* لإظهار النقاط (...) */
+        white-space: normal !important; /* السماح بالالتفاف */
+    }
+
+    .product-item p { /* الوصف */
+        display: none !important; /* إخفاء الوصف كما في لقطة الشاشة */
+    }
+
+    .product-item .price {
+        font-size: 1.2em !important; /* **التعديل هنا: تصغير حجم السعر قليلاً** */
+        text-align: center !important;
+        margin-top: 0 !important; /* إزالة أي هامش علوي قديم */
+        margin-bottom: 10px !important; /* مسافة بين السعر والأزرار */
+    }
+
+    .product-item .product-actions {
+        flex-direction: row !important; /* الأزرار جنبًا إلى جنب */
+        gap: 5px !important;
+        margin-top: auto !important; /* دفع الأزرار للأسفل */
+        padding-top: 0 !important;
+    }
+
+    .product-item .add-to-cart-btn {
+        padding: 6px 10px !important; /* **التعديل هنا: تصغير حشوة الزر** */
+        font-size: 0.8em !important; /* **التعديل هنا: تصغير حجم خط الزر** */
+        width: auto !important;
+        flex-grow: 1 !important;
+        max-width: unset !important;
+        height: 35px !important; /* **التعديل هنا: تصغير ارتفاع الزر** */
+        gap: 6px !important;
+        white-space: nowrap !important; /* **إضافة: لمنع التفاف النص داخل الزر** */
+    }
+    .product-item .add-to-wishlist-btn {
+        width: 35px !important; /* **التعديل هنا: جعل زر القلب أصغر ليتناسب مع زر السلة الجديد** */
+        height: 35px !important;
+        font-size: 1.0em !important; /* **تصغير أيقونة القلب قليلاً** */
+        border-radius: 50% !important;
+        flex-shrink: 0 !important;
+        flex-grow: 0 !important;
+    }
+    /*
+        * جديد: أنماط زر "اختر النوع" في الموبايل لبطاقات المنتجات الشبكية
+        * يتبع نفس تنسيق زر "أضف للسلة" مع التعديلات الخاصة بالشاشات الصغيرة
+    */
+    .product-item .product-actions .view-details-btn {
+        padding: 6px 10px !important; /* نفس حشوة زر السلة */
+        font-size: 0.8em !important; /* نفس حجم خط زر السلة */
+        width: auto !important;
+        flex-grow: 1 !important;
+        max-width: unset !important;
+        height: 35px !important; /* نفس ارتفاع زر السلة */
+        gap: 6px !important;
+        white-space: nowrap !important;
+        background-color: var(--alridha-main-orange-red) !important; /* اللون الموحد لأزرار "اختر النوع" */
+        color: white !important;
+        border-radius: 50px !important; /* **تغيير هنا: لجعل الحواف دائرية في الموبايل** */
+    }
+    .product-item .product-actions .view-details-btn:hover {
+        background-color: var(--alridha-main-orange-red-hover) !important; /* لون عند التحويم */
+        transform: translateY(-2px) !important;
+        box-shadow: var(--hover-shadow) !important;
+    }
+}
+
+/* ************** أنماط خاصة جداً للشاشات الصغيرة جداً (أقل من 480 بكسل) ************** */
+@media (max-width: 480px) {
+    .products-display-area {
+        gap: 10px !important;
+        padding: 10px !important;
+        /* padding-bottom: 20px !important;  هذه لم تعد ضرورية هنا */
+    }
+    .product-item {
+        width: 180px !important; /* تصغير حجم البطاقات في الكاروسيل على الشاشات الأصغر */
+        min-height: 230px !important; /* ارتفاع أدنى مناسب */
+    }
+    .product-item h3 {
+        font-size: 0.9em !important; /* تصغير اسم المنتج أكثر */
+    }
+    .product-item .price {
+        font-size: 1.0em !important; /* تصغير السعر أكثر */
+    }
+    .product-item .add-to-cart-btn,
+    .product-item .add-to-wishlist-btn {
+        padding: 5px 7px !important; /* تصغير الحشوة أكثر */
+        font-size: 0.7em !important; /* تصغير حجم خط الأزرار أكثر */
+        height: 30px !important; /* تصغير الارتفاع أكثر */
+        gap: 5px !important;
+    }
+    .product-item .add-to-wishlist-btn {
+        width: 30px !important;
+        height: 30px !important;
+        font-size: 0.9em !important;
+    }
+    /*
+        * جديد: أنماط زر "اختر النوع" للشاشات الصغيرة جداً في بطاقات المنتجات الشبكية
+        * يتبع نفس تنسيق زر "أضف للسلة" في هذا الحجم
+    */
+    .product-item .product-actions .view-details-btn {
+        padding: 5px 7px !important; /* نفس حشوة زر السلة */
+        font-size: 0.7em !important; /* نفس حجم خط زر السلة */
+        height: 30px !important; /* نفس ارتفاع زر السلة */
+        gap: 5px !important;
+        border-radius: 50px !important; /* **تغيير هنا: لجعل الحواف دائرية في الشاشات الأصغر** */
+    }
+}
+/* أنماط المتغيرات في صفحة تفاصيل المنتج */
+.product-variants {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-top: 15px;
+    border-top: 1px dashed var(--border-color);
+}
+
+.product-variants h4 {
+    font-size: 1.1em;
+    color: var(--dark-text);
+    margin-bottom: 10px;
+    text-align: right; /* محاذاة لليمين للنص العربي */
+}
+
+.variant-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: flex-end; /* محاذاة لليمين للعناصر */
+}
+
+.variant-option-btn {
+    background-color: var(--light-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    padding: 8px 15px;
+    cursor: pointer;
+    font-size: 0.95em;
+    color: var(--dark-text);
+    transition: all 0.3s ease;
+    min-width: 80px;
+    text-align: center;
+}
+
+.variant-option-btn:hover {
+    background-color: var(--light-blue);
+    border-color: var(--alridha-main-orange-red);
+    color: var(--alridha-main-orange-red);
+}
+
+.variant-option-btn.active {
+    background-color: var(--alridha-main-orange-red);
+    border-color: var(--alridha-main-orange-red);
+    color: white;
+    font-weight: bold;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* For very small screens */
+@media (max-width: 480px) {
+    .variant-option-btn {
+        padding: 6px 12px;
+        font-size: 0.85em;
+        min-width: 70px;
+    }
+}

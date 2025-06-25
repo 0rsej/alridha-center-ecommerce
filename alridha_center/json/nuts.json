@@ -1,0 +1,31 @@
+[
+    { "id": 1, "globalId": "nuts_1", "name": "لوز", "price": 20000, "desc": "لوز طبيعي محمص.", "image": "قسم البهارات/لوز.jpeg", "category": "nuts" },
+    { "id": 2, "globalId": "nuts_2", "name": "حب مشكل", "price": 8000, "desc": "حب مشكل للتحميص بأنواع مختلفة.", "image": "قسم البهارات/حب-مشكل-عادي.jpeg", "category": "nuts",
+      "variants": [
+        { "type": "نوع", "value": "عادي", "image": "قسم البهارات/حب-مشكل-عادي.jpeg", "price_modifier": 0 },
+        { "type": "نوع", "value": "اصلي", "image": "قسم البهارات/حب-مشكل-اصلي.jpeg", "price_modifier": 8000 }
+      ]
+    },
+    { "id": 3, "globalId": "nuts_3", "name": "فستق حلبي", "price": 20000, "desc": "فستق حلبي عالي الجودة.", "image": "قسم البهارات/فستق-حلبي.jpeg", "category": "nuts" },
+    { "id": 4, "globalId": "nuts_4", "name": "لوز (نوع آخر)", "price": 14000, "desc": "لوز فاخر.", "image": "قسم البهارات/لوز-فاخر.jpeg", "category": "nuts" },
+    { "id": 5, "globalId": "nuts_5", "name": "كاجو", "price": 16000, "desc": "كاجو محمص.", "image": "قسم البهارات/كاجو.jpeg", "category": "nuts" },
+    { "id": 6, "globalId": "nuts_6", "name": "دك السبال", "price": 6000, "desc": "دك السبال فاخر.", "image": "قسم البهارات/دك-السبال.jpeg", "category": "nuts" },
+    { "id": 7, "globalId": "nuts_7", "name": "جوز عين الجمل", "price": 6000, "desc": "جوز عين الجمل كامل أو مفلس.", "image": "قسم البهارات/جوز-عين-الجمل.jpeg", "category": "nuts",
+      "variants": [
+        { "type": "شكل", "value": "صحيح", "image": "قسم البهارات/جوز-عين-الجمل.jpeg", "price_modifier": 0 },
+        { "type": "شكل", "value": "مفلس", "image": "قسم البهارات/جوز-عين-الجمل-مفلس.jpeg", "price_modifier": 6000 }
+      ]
+    },
+    { "id": 8, "globalId": "nuts_8", "name": "زبيب", "price": 8000, "desc": "زبيب حلو وطازج.", "image": "قسم البهارات/زبيب.jpeg", "category": "nuts" },
+    { "id": 9, "globalId": "nuts_9", "name": "حمص", "price": 6000, "desc": "حمص محمص ومقرمش.", "image": "قسم البهارات/حمص.jpeg", "category": "nuts" },
+    { "id": 10, "globalId": "nuts_10", "name": "ذرة", "price": 6000, "desc": "ذرة محمصة.", "image": "قسم البهارات/ذرة.jpeg", "category": "nuts" },
+    { "id": 11, "globalId": "nuts_11", "name": "حب اصفر", "price": 8000, "desc": "حب اصفر للتحميص.", "image": "قسم البهارات/حب-اصفر.jpeg", "category": "nuts" },
+    { "id": 12, "globalId": "nuts_12", "name": "حب ابيض", "price": 10000, "desc": "حب ابيض للتحميص.", "image": "قسم البهارات/حب-ابيض.jpeg", "category": "nuts" },
+    { "id": 13, "globalId": "nuts_13", "name": "فستق سوداني", "price": 6000, "desc": "فستق سوداني محمص.", "image": "قسم البهارات/فستق-سوداني.jpeg", "category": "nuts" },
+    { "id": 14, "globalId": "nuts_14", "name": "حب", "price": 5000, "desc": "حب للتحميص بأنواع مختلفة.", "image": "قسم البهارات/حب-عادي.jpeg", "category": "nuts",
+      "variants": [
+        { "type": "نوع", "value": "عادي", "image": "قسم البهارات/حب-عادي.jpeg", "price_modifier": 0 },
+        { "type": "نوع", "value": "امريكي", "image": "قسم البهارات/حب-امريكي.jpeg", "price_modifier": 3000 }
+      ]
+    }
+]

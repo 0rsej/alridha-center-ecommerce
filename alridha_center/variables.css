@@ -1,0 +1,34 @@
+/*
+ * تعريف الألوان الجديدة (البرتقالي المائل للأحمر والأخضر) من الشعار لتحقيق التناسق
+ */
+:root {
+    --alridha-main-orange-red: #ff4500; /* برتقالي مائل للأحمر (برتقالي ناري) */
+    --alridha-dark-orange: #e65100;    /* برتقالي داكن لخلفية الشريط */
+    --alridha-secondary-red: #dc3545;   /* أحمر داكن (للتأكيد أو الخطر) */
+    --alridha-accent-green: #28a745;    /* أخضر لتمييز بعض العناصر */
+    --alridha-light-orange: #ff6f00; /* برتقالي فاتح للتدرج */
+
+    --primary-button-color: var(--alridha-main-orange-red);
+    --primary-button-hover: #cc3700;
+
+    --light-bg: #fdfdfd;
+    --dark-text: #333;
+    --light-text: #555;
+    --card-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* ظل أعمق وأكثر نعومة */
+    --hover-shadow: 0 15px 35px rgba(0, 0, 0, 0.25); /* ظل للتحويم */
+
+    /* الألوان الخاصة بصفحات المنتجات (مثل متجر البهارات) */
+    --success-color: var(--alridha-accent-green);
+    --success-hover: #218838;
+    --danger-color: var(--alridha-secondary-red);
+    --danger-hover: #c82333;
+    --border-color: #eee;
+    --light-gray: #f9f9f9;
+    --dark-gray: #333;
+
+    /* ألوان إضافية للتحسينات البصرية */
+    --navbar-gradient-start: var(--alridha-main-orange-red);
+    --navbar-gradient-end: var(--alridha-dark-orange);
+    --text-shadow-light: rgba(0,0,0,0.05);
+    --nav-item-active-bg: rgba(255,255,255,0.15); /* خلفية العنصر النشط في القائمة الجانبية */
+}

@@ -1,0 +1,584 @@
+/* الأنماط العامة للحاويات والأقسام */
+.main-container {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px var(--card-shadow);
+    max-width: 900px;
+    width: 90%;
+    margin: 40px auto; /* تغيير لضمان التوسيط الأوتوماتيكي */
+    margin-top: 160px; /* زيادة الهامش العلوي لتعويض Navbar الثابت */
+    border: 1px solid var(--border-color);
+    text-align: center;
+}
+h1 {
+    color: var(--alridha-main-orange-red);
+    font-size: 4em;
+    margin-top: 0;
+    margin-bottom: 25px;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+}
+h1.page-title, h2 {
+    text-align: center;
+    margin-bottom: 35px;
+    color: var(--alridha-main-orange-red);
+    font-size: 2.8em;
+    text-shadow: 1px 1px 3px var(--text-shadow-light);
+}
+p {
+    font-size: 1.3em;
+    line-height: 1.8;
+    margin-bottom: 35px;
+    color: var(--light-text);
+    text-align: justify; /* جعل النصوص متساوية من الطرفين */
+}
+.center-image {
+    display: none; /* إخفاء الشعار الأصلي الكبير في الصفحة الرئيسية */
+}
+
+/* أقسام باقي الموقع */
+.about-section {
+    margin-top: 50px; padding: 40px; background-color: #fefefe; border-radius: 15px;
+    box-shadow: inset 0 3px 10px rgba(0,0,0,0.1); text-align: right; border: 1px solid var(--border-color);
+}
+.about-section h2 { color: var(--alridha-secondary-red); font-size: 2.5em; margin-bottom: 25px; text-align: center; }
+.about-section p { margin-bottom: 0; text-align: justify; }
+
+.main-categories-section {
+    margin-top: 60px; padding: 40px; background-color: #fefefe; border-radius: 15px;
+    box-shadow: inset 0 3px 10px rgba(0,0,0,0.1); text-align: center; border: 1px solid var(--border-color);
+}
+.main-categories-section h2 { color: var(--alridha-main-orange-red); font-size: 2.5em; margin-bottom: 35px; }
+.categories-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 25px; justify-content: center;
+}
+.category-item {
+    background-color: white; padding: 25px; border-radius: 12px; box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; text-decoration: none; color: var(--dark-text);
+    display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 180px;
+    border: 1px solid #ddd;
+}
+.category-item:hover { transform: translateY(-8px) scale(1.02); box-shadow: 0 12px 25px rgba(0,0,0,0.25); }
+.category-item i { font-size: 3.5em; color: var(--alridha-secondary-red); margin-bottom: 20px; }
+
+.view-all-categories-btn {
+    display: inline-flex; margin-top: 40px; padding: 15px 30px; background-color: var(--alridha-secondary-red);
+    color: white;
+    text-decoration: none; border-radius: 50px; font-size: 1.2em; font-weight: 700;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.25); align-items: center; justify-content: center;
+}
+.view-all-categories-btn:hover { background-color: #b03a2e; transform: translateY(-5px); box-shadow: 0 8px 18px rgba(0,0,0,0.35); }
+.view-all-categories-btn i { margin-left: 10px; font-size: 1.3em; }
+
+/* Hero Section جديد */
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* ارتفاع كامل الشاشة */
+    background: url('hero-bg.jpg') no-repeat center center/cover; /* يمكنك تغيير 'hero-bg.jpg' إلى صورة جذابة من اختيارك */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    overflow: hidden; /* لمنع أي تجاوز */
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(255, 69, 0, 0.4), rgba(220, 53, 69, 0.6)); /* تدرج من البرتقالي الشفاف إلى الأحمر الشفاف */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+    max-width: 800px;
+    animation: fadeIn 2s ease-out forwards; /* تأثير ظهور سلس */
+}
+
+.hero-content .welcome-text {
+    font-size: 1.8em;
+    font-weight: 500;
+    margin-bottom: 10px;
+    letter-spacing: normal; /* إزالة تباعد الأحرف المبالغ فيه */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3); /* ظل نص خفيف لتحسين الوضوح */
+    opacity: 0; /* للأنيميشن */
+    animation: slideInFromTop 1s ease-out 0.5s forwards;
+}
+
+.hero-content .hero-title {
+    font-size: 4.5em; /* حجم كبير للعنوان */
+    font-weight: 800;
+    margin-bottom: 20px;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+    opacity: 0; /* للأنيميشن */
+    animation: slideInFromBottom 1s ease-out 0.8s forwards;
+}
+
+.hero-content .hero-title .store-name {
+    color: white !important; /* **مهم جداً:** فرض اللون الأبيض باستخدام !important */
+    filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.6)); /* ظل نص داكن لزيادة الوضوح على الخلفية */
+}
+.hero-content .hero-slogan {
+    font-size: 1.5em;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0; /* للأنيميشن */
+    animation: fadeIn 1.5s ease-out 1s forwards;
+}
+
+.hero-content .hero-btn {
+    display: inline-flex; /* تم التأكيد على flexbox */
+    align-items: center; /* لمحاذاة العناصر داخل الزر عمودياً */
+    background-color: var(--alridha-main-orange-red);
+    color: white;
+    padding: 18px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    opacity: 0; /* للأنيميشن */
+    animation: zoomIn 0.8s ease-out 1.5s forwards;
+}
+
+.hero-content .hero-btn:hover {
+    background-color: var(--alridha-secondary-red);
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4);
+}
+.hero-content .hero-btn i {
+    margin-right: 10px; /* مسافة للأيقونة */
+    font-size: 1.1em;
+    vertical-align: middle; /* لضمان المحاذاة العمودية */
+    line-height: 1; /* لضبط ارتفاع سطر الأيقونة */
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideInFromTop {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideInFromBottom {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+
+/* ... (الكود السابق في home.css حتى بداية .how-it-works-section) ... */
+
+/* ************** تحسينات قسم "كيف نعمل؟" - تصميم مدمج وأنيق ************** */
+.how-it-works-section {
+    margin-top: 60px; /* العودة إلى هامش علوي معتدل */
+    padding: 40px 20px; /* حشوة داخلية معتدلة */
+    background: linear-gradient(to right, var(--navbar-gradient-start), var(--navbar-gradient-end)); /* تدرج لوني ناعم */
+    color: white;
+    border-radius: 15px; /* انحناء زوايا معتدل */
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2); /* ظل ناعم */
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+.how-it-works-section h2 {
+    color: white;
+    font-size: 2.2em; /* تصغير حجم العنوان ليصبح متناسباً */
+    margin-bottom: 30px; /* مسافة معتدلة بعد العنوان */
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.4); /* ظل نص خفيف */
+    position: relative;
+    z-index: 1;
+    font-weight: 700; /* خط سميك لكن ليس ثقيلاً جداً */
+}
+
+.steps-grid {
+    display: flex;
+    flex-direction: column; /* تبقى عمودية */
+    align-items: flex-end; /* **مهم:** محاذاة الخطوات لليمين */
+    gap: 15px; /* مسافة صغيرة بين كل خطوة */
+    padding: 0 20px; /* حشوة جانبية */
+    position: relative;
+    z-index: 1;
+}
+
+.step-item {
+    background-color: transparent; /* لا خلفية للبطاقة */
+    border: none; /* لا حدود */
+    box-shadow: none; /* لا ظلال */
+    padding: 5px 0; /* حشوة داخلية بسيطة */
+    width: 100%;
+    max-width: 600px; /* أقصى عرض للسطر على الشاشات الكبيرة */
+    display: flex; /* لعرض الأيقونة والمحتوى في سطر واحد */
+    flex-direction: row-reverse; /* الأيقونة على اليمين، المحتوى على اليسار */
+    align-items: flex-start; /* محاذاة عمودية للأعلى */
+    text-align: right; /* محاذاة النص لليمين */
+    position: relative;
+    transition: transform 0.2s ease; /* انتقال أسرع للتحويم */
+}
+
+.step-item:hover {
+    transform: translateX(-5px); /* تحريك طفيف جداً لليمين عند التحويم */
+    /* إزالة تأثيرات الظل والخلفية عند التحويم للحفاظ على البساطة */
+}
+
+/* الأيقونة في بداية كل سطر */
+.step-item .step-icon {
+    font-size: 1.8em; /* أيقونة أصغر بكثير */
+    color: #ffd700; /* لون ذهبي للأيقونة */
+    background: transparent; /* لا خلفية */
+    border-radius: 0; /* لا انحناء زوايا */
+    min-width: 30px; /* حجم ثابت صغير للدائرة الوهمية */
+    min-height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: none; /* لا ظلال */
+    margin-left: 15px; /* مسافة معتدلة عن المحتوى */
+    flex-shrink: 0;
+    z-index: 2;
+    border: none; /* لا حدود */
+}
+
+.step-item .step-content {
+    text-align: right;
+    flex-grow: 1;
+}
+
+.step-item h3 {
+    font-size: 1.25em; /* حجم معتدل لعنوان الخطوة */
+    color: white;
+    margin-bottom: 5px; /* مسافة صغيرة */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3); /* ظل نص خفيف */
+    text-align: right;
+    font-weight: 600; /* خط شبه سميك */
+}
+
+.step-item p {
+    font-size: 1.05em; /* حجم نص الشرح صغير */
+    color: rgba(255,255,255,0.9); /* نص أكثر وضوحاً بقليل */
+    margin-bottom: 0;
+    line-height: 1.6;
+    text-align: justify; /* جعل النص متساوياً من الطرفين */
+}
+
+/* ... (باقي الأنماط حتى Media Queries) ... */
+
+/* ************** Media Query for mobile devices (max-width: 768px) ************** */
+@media (max-width: 768px) {
+    /* ... (أنماط عامة سابقة) ... */
+
+    .how-it-works-section {
+        margin-top: 40px;
+        padding: 30px 10px; /* حشوة أقل على الجوال */
+        border-radius: 12px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+    .how-it-works-section h2 {
+        font-size: 1.8em; /* تصغير العنوان أكثر على الجوال */
+        margin-bottom: 25px;
+    }
+    .steps-grid {
+        gap: 10px; /* مسافة أقل بين الخطوات على الجوال */
+        padding: 0 5px;
+        align-items: flex-end; /* محاذاة لليمين */
+    }
+    .step-item {
+        padding: 5px 0;
+        max-width: 100%; /* العرض الكامل */
+        flex-direction: row-reverse; /* الأيقونة على اليمين */
+        align-items: flex-start;
+    }
+    .step-item .step-icon {
+        font-size: 1.5em; /* تصغير أيقونة الخطوة على الجوال */
+        min-width: 25px;
+        min-height: 25px;
+        margin-left: 10px;
+    }
+    .step-item h3 {
+        font-size: 1.1em; /* تصغير عنوان الخطوة على الجوال */
+        margin-bottom: 3px;
+    }
+    .step-item p {
+        font-size: 0.95em; /* تصغير نص الشرح على الجوال */
+        text-align: justify;
+    }
+    
+    /* ... (باقي الأنماط في Media Query) ... */
+}
+
+/* ************** أنماط خاصة جداً للشاشات الصغيرة جداً (أقل من 480 بكسل) ************** */
+@media (max-width: 480px) {
+    /* ... (أنماط عامة سابقة) ... */
+
+    .how-it-works-section {
+        margin-top: 30px;
+        padding: 20px 8px;
+        border-radius: 10px;
+    }
+    .how-it-works-section h2 {
+        font-size: 1.6em;
+        margin-bottom: 20px;
+    }
+    .steps-grid {
+        gap: 8px;
+        padding: 0 5px;
+    }
+    .step-item {
+        padding: 3px 0;
+    }
+    .step-item .step-icon {
+        font-size: 1.3em;
+        min-width: 20px;
+        min-height: 20px;
+        margin-left: 8px;
+    }
+    .step-item h3 {
+        font-size: 1em;
+    }
+    .step-item p {
+        font-size: 0.85em;
+    }
+}
+/* **التعديل هنا:** إخفاء الخط الفاصل تماماً على الشاشات الكبيرة والصغيرة لتجنب المشاكل */
+.steps-grid .step-item:not(:last-child)::after {
+    display: none; /* إزالة الخطوط الرأسية بشكل دائم */
+}
+
+.services-section {
+    margin-top: 60px; padding: 40px; background-color: #fefefe; border-radius: 15px;
+    box-shadow: inset 0 3px 10px rgba(0,0,0,0.1); text-align: right; border: 1px solid var(--border-color);
+}
+.services-section h2 { color: var(--alridha-secondary-red); font-size: 2.5em; margin-bottom: 30px; text-align: center; }
+.services-list { list-style: none; padding: 0; margin: 0; }
+.services-list li { margin-bottom: 20px; font-size: 1.25em; color: var(--dark-text); display: flex; align-items: center; text-align: right; }
+.services-list li i { color: var(--alridha-accent-green); margin-left: 15px; font-size: 1.4em; }
+
+.contact-section {
+    margin-top: 60px;
+    padding: 50px 20px; /* زيادة الحشوة العلوية والسفلية */
+    background: linear-gradient(to left, var(--alridha-secondary-red), var(--alridha-main-orange-red));
+    color: white;
+    border-radius: 20px; /* زيادة انحناء الزوايا لجعلها أكثر جرأة */
+    box-shadow: 0 15px 40px rgba(0,0,0,0.35); /* ظل أكبر وأوضح */
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    display: flex; /* تحويل القسم نفسه إلى Flexbox */
+    flex-direction: column; /* ترتيب المحتوى عمودياً */
+    align-items: center; /* توسيط المحتوى أفقياً */
+    justify-content: center;
+}
+.contact-section h2 {
+    color: white;
+    font-size: 2.5em; /* زيادة حجم العنوان ليناسب التصميم الجريء */
+    margin-bottom: 40px; /* مسافة أكبر تحت العنوان */
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.4); /* ظل نص أقوى */
+    position: relative;
+    z-index: 2; /* تأكد أنه يظهر فوق أي عناصر خلفية */
+}
+
+/* الأنماط الجديدة لـ contact-info (التي تحتوي على الموقع فقط) */
+.contact-info {
+    display: flex;
+    flex-direction: column; /* الأيقونة فوق النص */
+    align-items: center; /* توسيط الأيقونة والنص */
+    text-align: center; /* توسيط النص */
+    margin-bottom: 30px; /* مسافة قبل أيقونات التواصل الاجتماعي */
+    position: relative;
+    z-index: 2;
+}
+
+/* نمط الرابط الذي يحتوي على أيقونة الموقع والنص */
+.contact-info .location-info-link {
+    text-decoration: none; /* إزالة خط تحت الرابط */
+    color: inherit; /* وراثة لون النص من الأب */
+    display: flex; /* لكي نتمكن من التحكم في محتواها باستخدام flexbox */
+    flex-direction: column; /* الأيقونة فوق النص */
+    align-items: center; /* توسيط الأيقونة والنص */
+    justify-content: center;
+    transition: transform 0.3s ease; /* تأثير تحويم ناعم */
+}
+.contact-info .location-info-link:hover {
+    transform: translateY(-5px); /* تحريك للأعلى عند التحويم */
+}
+
+.contact-info .location-info { /* استهداف الفقرة داخل الرابط */
+    display: flex; /* لكي نتمكن من التحكم في محتواها باستخدام flexbox */
+    flex-direction: column; /* الأيقونة فوق النص */
+    align-items: center; /* توسيط الأيقونة والنص */
+    justify-content: center;
+    color: white; /* لون النص أبيض */
+    font-size: 1.3em; /* حجم خط أكبر للموقع */
+    line-height: 1.5;
+    margin-bottom: 0; /* إزالة الهامش السفلي للفقرة */
+    max-width: 80%; /* تحديد أقصى عرض للنص لكي لا يمتد كثيراً */
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3); /* ظل خفيف للنص */
+}
+
+.contact-info .location-info i {
+    font-size: 3.2em; /* تم تكبيرها قليلاً (من 3em)*/
+    color: #ffd700; /* لون ذهبي مميز للأيقونة */
+    margin-bottom: 15px; /* مسافة بين الأيقونة والنص */
+    animation: bounceIn 1s ease-out forwards; /* إضافة حركة دخول للأيقونة */
+    display: block; /* للتأكد من أنها تأخذ سطرها الخاص */
+}
+
+/* Keyframe for icon animation */
+@keyframes bounceIn {
+    0% { transform: scale(0.1); opacity: 0; }
+    60% { transform: scale(1.2); opacity: 1; }
+    100% { transform: scale(1); }
+}
+
+.contact-info .location-info span {
+    direction: rtl; /* التأكيد على اتجاه النص من اليمين لليسار */
+    text-align: center; /* توسيط النص نفسه */
+    display: block; /* التأكد أنه يأخذ سطر كامل */
+    font-weight: 500;
+}
+
+/* أزرار التواصل الاجتماعي */
+.social-links {
+    margin-top: 30px; /* مسافة من الأعلى */
+    position: relative;
+    z-index: 2;
+}
+.social-links a {
+    color: white;
+    font-size: 3.2em; /* تم تكبيرها قليلاً (من 3em)*/
+    margin: 0 15px; /* مسافة بين الأيقونات */
+    transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
+    text-decoration: none;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+.social-links a:hover {
+    transform: translateY(-5px) scale(1.1); /* تأثير تحويم أكثر وضوحاً */
+    color: #ffd700; /* يتغير للذهبي عند التحويم */
+    text-shadow: 0 0 10px rgba(255,255,255,0.7); /* ظل حول الأيقونة عند التحويم */
+}
+
+
+/* ************** Media Query for mobile devices (max-width: 768px) ************** */
+@media (max-width: 768px) {
+    body {
+        font-size: 15px;
+    }
+    .main-container, .container {
+        padding: 15px;
+        width: 95%;
+        margin-top: 100px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px var(--card-shadow);
+    }
+
+    /* Media Queries for Hero Section on Mobile */
+    .hero-section {
+        height: 80vh; /* ارتفاع أقل على الجوال */
+    }
+    .hero-content .welcome-text {
+        font-size: 1.4em;
+    }
+    .hero-content .hero-title {
+        font-size: 3em;
+    }
+    .hero-content .hero-slogan {
+        font-size: 1.1em;
+        margin-bottom: 30px;
+    }
+    .hero-content .hero-btn {
+        padding: 15px 25px;
+        font-size: 1em;
+    }
+    /* تحسينات باقي الأقسام على الجوال */
+    h1 {
+    /* قم بإزالة خاصية color هنا لتجنب التعارض مع الـ span داخله */
+    /* color: var(--alridha-main-orange-red); <--- احذف هذا السطر */
+    font-size: 4em;
+    margin-top: 0;
+    margin-bottom: 25px;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+}
+    h1.page-title, h2 { font-size: 2.2em; margin-bottom: 25px; }
+    p { font-size: 1.05em; line-height: 1.6; margin-bottom: 25px; }
+    .about-section, .main-categories-section, .how-it-works-section, .services-section, .contact-section {
+        padding: 25px; margin-top: 30px; border-radius: 10px;
+    }
+    .about-section h2, .main-categories-section h2, .how-it-works-section h2, .services-section h2, .contact-section h2 {
+        font-size: 2em; margin-bottom: 20px;
+    }
+    .categories-grid { grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; }
+    .category-item { padding: 10px; min-height: 100px; border-radius: 8px; box-shadow: 0 3px 8px rgba(0,0,0,0.1); }
+    .category-item i { font-size: 2.2em; margin-bottom: 10px; }
+
+    .contact-section {
+        padding: 30px 15px; /* حشوة أقل على الجوال */
+        border-radius: 15px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+    .contact-section h2 {
+        font-size: 2em; /* تصغير العنوان أكثر على الجوال */
+        margin-bottom: 25px;
+    }
+    .contact-info {
+        margin-bottom: 20px;
+    }
+    .contact-info .location-info-link { /* نمط الرابط الجديد على الجوال */
+        font-size: 1.1em; /* تصغير حجم خط الموقع على الجوال */
+    }
+    .contact-info .location-info i {
+        font-size: 2.7em; /* تم تكبيرها قليلاً (من 2.5em) */
+        margin-bottom: 10px;
+    }
+    .social-links {
+        margin-top: 20px;
+    }
+    .social-links a {
+        font-size: 2.7em; /* تم تكبيرها قليلاً (من 2.5em) */
+        margin: 0 10px;
+    }
+}
+
+/* ************** أنماط خاصة جداً للشاشات الصغيرة جداً (أقل من 480 بكسل) ************** */
+@media (max-width: 480px) {
+    .contact-section {
+        padding: 25px 10px;
+    }
+    .contact-section h2 {
+        font-size: 1.8em;
+        margin-bottom: 20px;
+    }
+    .contact-info .location-info-link { /* نمط الرابط الجديد على الشاشات الصغيرة جداً */
+        font-size: 1em; /* تصغير حجم خط الموقع أكثر */
+    }
+    .contact-info .location-info i {
+        font-size: 2.2em; /* تم تكبيرها قليلاً (من 2em) */
+        margin-bottom: 8px;
+    }
+    .social-links a {
+        font-size: 2.2em; /* تم تكبيرها قليلاً (من 2em) */
+        margin: 0 8px;
+    }
+}

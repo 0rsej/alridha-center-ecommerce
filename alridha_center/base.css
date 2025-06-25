@@ -1,0 +1,24 @@
+/* ربط خط عربي من جوجل فونتس (Cairo) */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
+
+/* إضافة إعادة ضبط الهوامش هنا */
+html {
+    direction: rtl; /* إضافة هذا السطر لضمان الاتجاه من اليمين لليسار للصفحة بالكامل */
+    box-sizing: border-box; /* التأكد من أن box-sizing يتم تعريفه لـ html أيضاً */
+    overflow-x: hidden; /* **جديد: إضافة هذا السطر هنا لمنع التمرير الأفقي على مستوى html** */
+}
+
+*, *::before, *::after {
+    box-sizing: inherit; /* لضمان أن جميع العناصر ترث box-sizing: border-box; */
+}
+
+body {
+    font-family: 'Cairo', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0; /* تأكيد إزالة الهوامش الافتراضية */
+    padding: 0; /* تأكيد إزالة الحشوات الافتراضية */
+    width: 100%; /* لضمان أن body يأخذ العرض الكامل */
+    background: var(--light-bg);
+    color: var(--dark-text);
+    text-align: center;
+    overflow-x: hidden; /* **تأكيد وجود هذا السطر لإخفاء شريط التمرير الأفقي على مستوى body** */
+}

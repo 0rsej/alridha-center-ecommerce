@@ -1,0 +1,6 @@
+[
+    { "id": 1, "globalId": "sweets_1", "name": "حلويات شرقية مشكلة", "price": 15000, "desc": "تشكيلة فاخرة لأوقاتكم السعيدة.", "image": "قسم البهارات/حلويات-شرقية-مشكلة.jpeg", "category": "sweets" },
+    { "id": 2, "globalId": "sweets_2", "name": "جكليت كويتي", "price": 6000, "desc": "شوكولاتة كويتية فاخرة.", "image": "قسم البهارات/جكليت-كويتي.jpeg", "category": "sweets" },
+    { "id": 3, "globalId": "sweets_3", "name": "جكليت قمر دين", "price": 4000, "desc": "شوكولاتة قمر دين مميزة.", "image": "قسم البهارات/جكليت-قمر-دين.jpeg", "category": "sweets" },
+    { "id": 4, "globalId": "sweets_4", "name": "جكليت مشكل", "price": 4000, "desc": "تشكيلة جكليت متنوعة.", "image": "قسم البهارات/جكليت-مشكل.jpeg", "category": "sweets" }
+]

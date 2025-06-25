@@ -1,0 +1,323 @@
+/* شريط التنقل العلوي (Navbar) - تحسين جذري */
+.navbar {
+    background: linear-gradient(to right, var(--navbar-gradient-start), var(--navbar-gradient-end));
+    padding: 10px 20px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    position: fixed; /* تأكد أنها Fixed لتثبيت الموضع */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    transition: top 0.3s ease-out, background 0.3s ease, box-shadow 0.3s ease;
+    
+    /* **التعديل هنا:** استخدام ارتفاع ثابت للشريط العلوي لضمان الثبات */
+    height: 80px; /* ارتفاع ثابت بدلاً من min-height */
+}
+
+/* شعار سنتر الرضا في الشريط العلوي */
+.navbar .brand-logo-container {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    margin-left: 0;
+    margin-right: auto;
+    padding: 5px 0;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+.navbar .brand-logo-container:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+.navbar .brand-logo-container img {
+    height: 60px;
+    width: auto;
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+    margin-left: 10px;
+    filter: drop-shadow(2px 2px 5px rgba(0,0,0,0.5));
+    display: block;
+}
+.navbar .brand-logo-container span {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: white;
+    white-space: nowrap;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+/* روابط التنقل الرئيسية */
+.navbar .nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 0 20px;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+    flex-grow: 1;
+}
+.navbar .nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    font-size: 1.05em;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease;
+    border-radius: 8px;
+    margin: 0 8px;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    text-shadow: 1px 1px 2px var(--text-shadow-light);
+}
+.navbar .nav-links a:hover,
+.navbar .nav-links a.active-link {
+    background-color: var(--alridha-secondary-red);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+.navbar .nav-links a i {
+    margin-left: 10px;
+    font-size: 1.1em;
+}
+/* أنماط عدادات السلة والمفضلة في القائمة الجانبية (للنظام الأكبر) */
+.navbar .nav-links a .cart-count,
+.navbar .nav-links a .wishlist-count {
+    background-color: var(--alridha-secondary-red);
+    color: white;
+    font-size: 0.8em;
+    padding: 2px 6px;
+    border-radius: 50%;
+    min-width: 20px;
+    text-align: center;
+    line-height: 1;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    margin-right: 5px; /* مسافة بسيطة من النص */
+    margin-left: 0;
+    white-space: nowrap; /* منع التفاف النص */
+}
+
+
+/* زر الهامبرغر */
+.navbar .menu-toggle {
+    display: none;
+    color: white;
+    font-size: 2.8em;
+    cursor: pointer;
+    padding: 5px 10px;
+    z-index: 1001;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+    
+    /* تم إزالة position, top, transform من هنا ليتولى JavaScript تحديد الموضع */
+    /* left: 10px; */ /* هذا سيتم تحديده بواسطة JS الآن */
+    /* margin-right: 0; */
+    order: unset;
+}
+.navbar .menu-toggle:hover {
+    transform: scale(1.1);
+}
+
+/* ************** تحسينات قوية للجوال (Mobile-first improvements) ************** */
+@media (max-width: 768px) {
+    /* تحسينات شريط التنقل (Navbar) على الجوال */
+    .navbar {
+        padding: 5px 10px;
+        /* **التعديل هنا:** استخدم ارتفاعًا ثابتًا بدلاً من min-height لضمان الثبات */
+        height: 60px; /* ارتفاع ثابت */
+        box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        justify-content: center;
+        /* يجب أن يبقى position: relative هنا ليحتوي زر الهامبرغر المطلق الذي تحدده JS */
+        position: relative; 
+    }
+
+    .navbar .brand-logo-container {
+        margin-right: 0;
+        margin-left: 0;
+        flex-grow: 0;
+        flex-shrink: 1;
+        justify-content: center;
+        padding: 0;
+    }
+    .navbar .brand-logo-container img {
+        height: 45px;
+        width: auto;
+        margin-left: 8px;
+    }
+    .navbar .brand-logo-container span {
+        font-size: 1.4em;
+    }
+
+    .navbar .nav-links {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 60%;
+        max-width: 300px;
+        height: 100%;
+        background: linear-gradient(to bottom, var(--alridha-dark-orange), var(--alridha-main-orange-red));
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-top: 80px;
+        box-shadow: 8px 0 25px rgba(0,0,0,0.5);
+        /* **تعديل هنا:** إضافة box-sizing و padding-right لضمان أن الظل لا يتجاوز العرض */
+        box-sizing: border-box; /* للتأكد من أن padding والحدود تُضمن في العرض */
+        padding-right: 0px; /* للتأكد من عدم وجود حشوة غير مرغوبة على اليمين */
+        transition: left 0.4s cubic-bezier(0.7, 0, 0.3, 1);
+        z-index: 999;
+        align-items: flex-start;
+        white-space: normal;
+        margin: 0;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .navbar .nav-links.active {
+        display: flex;
+        left: 0;
+        right: auto;
+    }
+
+    .navbar .menu-toggle {
+        display: block; /* تأكد أنه يظهر في وضع الجوال */
+        color: white;
+        font-size: 2.2em;
+        cursor: pointer;
+        padding: 5px 10px;
+        z-index: 1001;
+        text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+        transition: transform 0.3s ease; /* فقط خصائص الدوران هنا */
+        
+        /* تم إزالة position, top, transform من هنا ليتولى JavaScript تحديد الموضع */
+        /* left: 10px; */ /* هذا سيتم تحديده بواسطة JS الآن */
+        /* margin-right: 0; */
+        order: unset;
+    }
+    .navbar .menu-toggle.active {
+        /* هنا يجب أن نطبق الدوران فقط، الموضع سيتولاه JavaScript */
+        transform: rotate(90deg); /* أزل translateY(-50%) من هنا */
+    }
+
+    body.menu-open::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        z-index: 998;
+        pointer-events: auto;
+        transition: opacity 0.4s ease-in-out;
+        opacity: 1;
+    }
+    body:not(.menu-open)::before {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .navbar .nav-links a {
+        width: calc(100% - 40px);
+        padding: 18px 20px;
+        border-bottom: 1px solid rgba(255,255,255,0.2);
+        justify-content: flex-start;
+        margin: 0;
+        font-size: 1.2em;
+        font-weight: 700;
+        text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
+        white-space: nowrap; /* منع التفاف النص داخل الروابط في القائمة الجانبية */
+    }
+    .navbar .nav-links a:last-child {
+        border-bottom: none;
+    }
+    .navbar .nav-links a:hover,
+    .navbar .nav-links a.active-link {
+        background-color: var(--nav-item-active-bg);
+        transform: translateX(5px);
+    }
+    /* أنماط عدادات السلة والمفضلة في القائمة الجانبية (للهاتف) */
+    .navbar .nav-links a .cart-count,
+    .navbar .nav-links a .wishlist-count {
+        position: static; /* لتظهر العدادات كجزء من التدفق العادي للعنصر */
+        top: auto;
+        right: auto;
+        background-color: var(--alridha-secondary-red);
+        color: white;
+        font-size: 0.8em;
+        padding: 2px 6px;
+        border-radius: 50%;
+        min-width: 20px;
+        text-align: center;
+        line-height: 1;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+        margin-right: 5px; /* مسافة من النص في القائمة الجانبية */
+        margin-left: 0;
+        transform: none; /* إزالة أي تحويلات */
+        display: inline-block; /* لضمان الظهور بشكل صحيح */
+        flex-shrink: 0; /* منع الانكماش */
+    }
+
+
+    .navbar .cart-link-container { /* هذا النمط لم يعد مستخدماً بنفس الطريقة */
+        display: none; /* تم نقل العدادات داخل nav-links a */
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: white;
+        font-size: 2.2em;
+        text-decoration: none;
+        align-items: center;
+        z-index: 1001;
+    }
+    .navbar .cart-link-container .cart-count { /* هذا النمط لم يعد مستخدماً بنفس الطريقة */
+        position: absolute;
+        top: -5px;
+        right: -5px;
+        background-color: var(--alridha-secondary-red);
+        color: white;
+        font-size: 0.7em;
+        padding: 2px 6px;
+        border-radius: 50%;
+        min-width: 20px;
+        text-align: center;
+        line-height: 1;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    }
+
+    .navbar .icon-group {
+        display: none;
+    }
+    .navbar .orders-logo-container {
+        display: none;
+    }
+}
+
+/* تحسينات إضافية للشريط العلوي على الجوال (أقل من 480 بكسل) */
+@media (max-width: 480px) {
+    .navbar .brand-logo-container span {
+        font-size: 1.2em;
+    }
+    .navbar .brand-logo-container img {
+        height: 35px;
+    }
+    .navbar .menu-toggle {
+        font-size: 1.8em;
+    }
+    .navbar .cart-link-container { /* هذا النمط لم يعد مستخدماً بنفس الطريقة */
+        font-size: 1.8em;
+    }
+    .navbar .nav-links {
+        width: 70%;
+    }
+}

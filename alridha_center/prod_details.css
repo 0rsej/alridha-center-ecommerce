@@ -1,0 +1,296 @@
+/* أنماط لصفحة تفاصيل المنتج */
+.product-detail-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column; /* عمودي افتراضياً للجوال */
+    align-items: center;
+    text-align: center;
+    border: 1px solid var(--border-color);
+    margin-bottom: 40px;
+}
+
+.product-detail-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+}
+
+.detail-image {
+    /* تم توحيد هذا الحجم ليكون مربعًا وكبيرًا */
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 15px;
+    border: 2px solid var(--alridha-main-orange-red);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    padding: 0;
+    background-color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.detail-image:hover {
+    transform: scale(1.03); /* تكبير طفيف عند التحويم */
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+}
+
+.detail-info {
+    flex-grow: 1;
+    text-align: left; /* محاذاة لليسار */
+}
+
+.product-category {
+    display: block;
+    font-size: 1.1em;
+    color: var(--light-text);
+    margin-bottom: 10px;
+    font-weight: 600;
+    text-align: right;
+}
+
+.detail-info h3 {
+    font-size: 2.8em; /* حجم أكبر لاسم المنتج */
+    color: var(--alridha-main-orange-red);
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 3px var(--text-shadow-light);
+    text-align: right;
+}
+
+.detail-desc {
+    font-size: 1.15em;
+    line-height: 1.7;
+    color: var(--light-text);
+    margin-bottom: 25px;
+    text-align: justify;
+}
+
+.price-stock-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* محاذاة لليمين */
+    margin-bottom: 25px;
+    width: 100%;
+}
+
+.detail-price {
+    font-size: 2.2em; /* حجم أكبر للسعر */
+    font-weight: 800;
+    color: var(--alridha-accent-green); /* لون أخضر مميز */
+    margin-bottom: 8px; /* مسافة بسيطة بين السعر والمخزون */
+    text-align: right;
+}
+.stock-info {
+    font-size: 1.1em;
+    color: var(--dark-text);
+    font-weight: 500;
+    text-align: right;
+}
+.stock-info i {
+    margin-left: 8px;
+    color: var(--alridha-accent-green);
+}
+
+/* عداد الكمية */
+.quantity-selector {
+    display: flex;
+    justify-content: flex-end; /* محاذاة لليمين */
+    align-items: center;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.quantity-btn {
+    background-color: var(--primary-button-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 1.8em;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.quantity-btn:hover {
+    background-color: var(--primary-button-hover);
+}
+.quantity-btn:active {
+    transform: translateY(1px);
+}
+
+.quantity-input {
+    width: 60px;
+    height: 40px;
+    padding: 5px;
+    margin: 0 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 1.2em;
+    -moz-appearance: textfield; /* إزالة أسهم العدد في Firefox */
+}
+.quantity-input::-webkit-outer-spin-button,
+.quantity-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+/* أزرار الإجراءات (أضف للسلة والمفضلة) */
+.product-detail-card .product-actions {
+    display: flex;
+    flex-direction: column; /* الأزرار عمودية على الجوال */
+    gap: 15px;
+    width: 100%;
+    margin-top: 15px; /* مسافة إضافية من الأعلى */
+}
+
+@media (min-width: 769px) {
+    .product-detail-card .product-actions {
+        flex-direction: row-reverse; /* الأزرار جنبًا إلى جنب على الشاشات الكبيرة */
+        justify-content: flex-start; /* محاذاة لليمين */
+    }
+}
+
+.product-detail-card .add-btn {
+    background-color: var(--alridha-accent-green);
+    color: white;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-size: 1.3em;
+    font-weight: 700;
+    width: 100%; /* تمدد لملء العرض */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+    height: auto; /* السماح بالارتفاع التلقائي بناءً على الحشوة */
+    min-height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.product-detail-card .add-btn:hover {
+    background-color: var(--success-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+}
+
+.product-detail-card .add-to-wishlist-btn {
+    background-color: transparent;
+    border: 2px solid var(--alridha-main-orange-red);
+    color: var(--alridha-main-orange-red);
+    padding: 12px 25px; /* حشوة أكبر لزر المفضلة */
+    border-radius: 50px;
+    font-size: 1.2em;
+    font-weight: 600;
+    width: 100%; /* تمدد لملء العرض */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    height: auto;
+    min-height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.product-detail-card .add-to-wishlist-btn i {
+    margin-left: 8px; /* مسافة بين الأيقونة والنص */
+    font-size: 1.1em;
+}
+.product-detail-card .add-to-wishlist-btn:hover {
+    background-color: var(--alridha-main-orange-red);
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+.product-detail-card .add-to-wishlist-btn.active {
+    background-color: var(--alridha-main-orange-red);
+    color: white;
+    border-color: var(--alridha-main-orange-red);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+/* معلومات التوصيل (نموذج ثابت) */
+.delivery-info {
+    margin-top: 25px;
+    padding: 15px 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    border: 1px dashed #ddd;
+    color: var(--light-text);
+    font-size: 1.05em;
+    text-align: right;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* محاذاة لليمين */
+    gap: 10px;
+    box-shadow: inset 0 1px 5px rgba(0,0,0,0.05);
+}
+.delivery-info i {
+    color: var(--alridha-main-orange-red);
+    font-size: 1.3em;
+}
+
+/* أنماط لقسم المنتجات ذات الصلة (في product-details.html) */
+.related-products-section {
+    margin-top: 60px;
+    padding: 30px 0;
+    background-color: #fefefe;
+    border-radius: 15px;
+    box-shadow: inset 0 3px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+}
+
+.related-products-section h2 {
+    color: var(--alridha-main-orange-red);
+    font-size: 1.8em;
+    margin-bottom: 25px;
+    text-shadow: 1px 1px 3px var(--text-shadow-light);
+    padding: 0 20px;
+}
+
+/* ملاحظة: أنماط products-display-area و product-item الأساسية موجودة الآن في product_common.css */
+
+/*
+   أنماط الجوال الخاصة بقسم المنتجات ذات الصلة - سيتم التحكم بها بشكل رئيسي من product_common.css
+*/
+@media (max-width: 768px) {
+    .product-detail-card {
+        padding: 20px;
+    }
+    .detail-image {
+        width: 150px;
+        height: 150px;
+    }
+    .detail-info h3 {
+        font-size: 2em;
+    }
+    .detail-desc {
+        font-size: 1.05em;
+        padding: 0 5px;
+    }
+    .detail-price {
+        font-size: 1.7em;
+    }
+    .product-detail-card .add-btn {
+        padding: 12px 30px;
+        font-size: 1.1em;
+        max-width: 250px;
+    }
+    /* لا توجد overrides خاصة هنا لقسم المنتجات ذات الصلة.
+       الأنماط العامة في product_common.css هي التي ستطبق. */
+}
+
+/* ************** أنماط خاصة جداً للشاشات الصغيرة جداً (أقل من 480 بكسل) ************** */
+@media (max-width: 480px) {
+    /* لا توجد overrides خاصة هنا.
+       الأنماط العامة في product_common.css هي التي ستطبق. */
+}

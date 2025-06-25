@@ -1,0 +1,158 @@
+/* أنماط صفحة السلة (cart.html) */
+.cart table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+.cart th,
+.cart td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+}
+.cart th {
+    background-color: #f4f4f4;
+    color: var(--dark-text);
+    font-weight: 700;
+}
+/* التعديل الجديد هنا لجعل الصورة على اليمين والنص بجانبها في جدول السلة */
+.cart td:first-child { /* تستهدف الخلية الأولى التي تحتوي على المنتج واسمه */
+    text-align: right; /* محاذاة النص والـ div لليمين */
+}
+.cart td:first-child > div { /* تستهدف الـ div الذي يحمل الصورة والنص معاً */
+    display: flex; /* تفعيل فليكس بوكس */
+    align-items: center; /* محاذاة عمودية للعناصر */
+    justify-content: flex-end; /* محاذاة كل المحتوى إلى اليمين */
+    flex-direction: row-reverse; /* الصورة على اليمين والنص على اليسار */
+    text-align: right; /* التأكد من أن النص داخل الـ div يبدأ من اليمين */
+}
+.cart td:first-child img {
+    margin-left: 10px; /* مسافة بين الصورة والنص */
+    margin-right: 0; /* إزالة الهامش الأيمن الافتراضي إذا كان موجوداً */
+}
+
+.cart-actions {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+.cart-actions > div {
+    display: flex;
+    gap: 10px;
+}
+.cart-actions strong {
+    font-size: 1.5em;
+    color: var(--alridha-secondary-red);
+}
+
+/* الأنماط الجديدة لحقول النموذج (الهاتف، الموقع، الملاحظات) */
+.checkout .form-group {
+    margin-bottom: 15px; /* مسافة بين مجموعات الحقول */
+}
+
+.checkout .form-group label {
+    display: block; /* لجعل التسمية تأخذ سطرًا خاصًا بها */
+    margin-bottom: 8px; /* مسافة أسفل التسمية */
+    font-weight: 600;
+    color: var(--dark-text);
+    text-align: right; /* محاذاة النص لليمين */
+}
+
+.checkout input,
+.checkout textarea {
+    width: 100%;
+    padding: 12px;
+    /* Margin يتم تحديده بواسطة form-group الآن */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1.05em;
+    box-sizing: border-box;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    direction: rtl; /* لضمان أن النص يكتب من اليمين لليسار */
+}
+
+/* أنماط الـ wrapper للأيقونات داخل حقول الإدخال */
+.input-icon-wrapper {
+    position: relative;
+    width: 100%;
+    display: flex; /* يجعل الأيقونة والحقل في سطر واحد */
+    align-items: center; /* لمحاذاة عمودية */
+}
+
+.input-icon-wrapper input {
+    width: 100%; /* اجعل الحقل يأخذ العرض الكامل */
+    padding-right: 40px; /* مسافة لليمين بسبب الأيقونة */
+    padding-left: 15px; /* حشوة لليسار */
+    direction: rtl; /* إذا كان النص عربيًا */
+}
+
+.input-icon-wrapper .icon-left {
+    position: absolute;
+    right: 15px; /* ضع الأيقونة لليمين (لأن الاتجاه RTL) */
+    color: var(--light-text);
+    font-size: 1.1em;
+    pointer-events: none; /* لمنع الأيقونة من اعتراض النقرات */
+}
+
+
+/* ************** Media Query for mobile devices (max-width: 768px) ************** */
+@media (max-width: 768px) {
+    /* أنماط صفحة السلة (cart.html) على الجوال */
+    .cart-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .cart-actions > div {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+    .cart-actions button {
+        width: 100%;
+        padding: 10px 15px;
+    }
+    .cart-actions strong {
+        font-size: 1.1em;
+        text-align: center;
+        margin-top: 15px;
+    }
+    .cart table {
+        width: 100%;
+        display: block;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    .cart th,
+    .cart td {
+        font-size: 0.9em;
+        padding: 8px;
+        white-space: nowrap;
+        min-width: 80px;
+    }
+    /* التعديل الجديد هنا لجعل الصورة على اليمين والنص بجانبها في جدول السلة على الجوال */
+    .cart td:first-child > div {
+        justify-content: flex-end; /* محاذاة كل المحتوى إلى اليمين */
+        flex-direction: row-reverse; /* الصورة على اليمين والنص على اليسار */
+        text-align: right;
+    }
+    .cart td input {
+        width: 50px !important;
+    }
+
+    /* أنماط حقول النموذج على الجوال */
+    .checkout input,
+    .checkout textarea {
+        padding: 10px;
+        font-size: 1em;
+    }
+    .input-icon-wrapper input {
+        padding-right: 35px; /* تعديل الحشوة للياقة على الجوال */
+    }
+    .input-icon-wrapper .icon-left {
+        right: 10px; /* تعديل موضع الأيقونة على الجوال */
+        font-size: 1em;
+    }
+}

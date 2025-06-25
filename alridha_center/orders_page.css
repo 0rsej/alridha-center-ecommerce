@@ -1,0 +1,121 @@
+/* أنماط صفحة الطلبات (orders.html) */
+#orders-list {
+    margin-top: 30px;
+    text-align: right;
+}
+.order-item {
+    margin-bottom: 25px;
+    padding: 20px 30px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    position: relative;
+}
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+.order-header h3 {
+    margin: 0;
+    color: var(--alridha-main-orange-red);
+    font-size: 1.8em;
+}
+.order-status {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9em;
+    color: white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+.order-status.pending {
+    background-color: var(--alridha-secondary-red);
+}
+.order-status.completed {
+    background-color: var(--alridha-accent-green);
+}
+.order-item p {
+    font-size: 1.1em;
+    margin-bottom: 8px;
+    color: var(--dark-text);
+    text-align: right;
+}
+.order-item strong {
+    color: var(--alridha-main-orange-red);
+}
+.order-items {
+    margin-top: 20px;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+}
+.order-items h4 {
+    color: var(--light-text);
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    text-align: right;
+}
+.order-items ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.order-items li {
+    background-color: var(--light-gray);
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    font-size: 1em;
+    color: var(--dark-text);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+    text-align: right;
+    justify-content: flex-end; /* يدفع المحتوى لليمين */
+    flex-direction: row-reverse; /* **التعديل هنا:** الصورة في اليمين، ثم النص في اليسار (في اتجاه RTL) */
+}
+.order-item-thumb {
+    display: none; /* **تعديل:** لإخفاء الصورة تماماً */
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    object-fit: cover;
+    margin-right: 10px; /* يمكن إزالة هذا الهامش أيضًا بما أن الصورة مخفية */
+    margin-left: 0;
+    border: 1px solid #ccc;
+}
+
+/* ************** Media Query for mobile devices (max-width: 768px) ************** */
+@media (max-width: 768px) {
+    /* أنماط صفحة الطلبات (orders.html) على الجوال */
+    .order-item {
+        padding: 15px 20px;
+    }
+    .order-header h3 {
+        font-size: 1.5em;
+    }
+    .order-status {
+        font-size: 0.8em;
+        padding: 4px 10px;
+    }
+    .order-item p {
+        font-size: 1em;
+    }
+    .order-items h4 {
+        font-size: 1.1em;
+    }
+    .order-items li {
+        font-size: 0.95em;
+        padding: 8px 12px;
+        /* التعديل الجديد هنا ليكون محتوى العنصر في قائمة الطلبات متطابقاً */
+        justify-content: flex-end; /* محاذاة كل المحتوى لليمين */
+    }
+    .order-item-thumb {
+        width: 35px;
+        height: 35px;
+        margin-right: 10px; /* مسافة بين الصورة والنص */
+    }
+}
