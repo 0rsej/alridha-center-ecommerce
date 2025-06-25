@@ -135,7 +135,7 @@
     border-radius: 5px;
     text-align: center;
     font-size: 1.2em;
-    -moz-appearance: textfield; /* إزالة أسهم العدد في Firefox */
+/* -moz-appearance: textfield; */ /* تم التعليق عليه */
 }
 .quantity-input::-webkit-outer-spin-button,
 .quantity-input::-webkit-inner-spin-button {
